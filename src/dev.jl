@@ -10,3 +10,13 @@ rs = read(cmd,String)
 js = JSON3.read(rs)
 
 js.items[1]
+
+fis = readdir(fldr)
+for firel in fis
+    fi = joinpath(fldr, firel)
+    print(fi)
+    cmd = `curl -X 'POST' https://api.brickognize.com/predict/figs/ -H 'accept: application/json' -H 'Content-Type: multipart/form-data' -F "query_image=@$fi;type=image/jpeg"`
+    rs = read(cmd,String)
+    js = JSON3.read(rs)
+    println(js.items[1])
+end
