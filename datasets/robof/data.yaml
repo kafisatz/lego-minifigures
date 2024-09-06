@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 1
+names: ['Lego-Minifigures']
+
+roboflow:
+  workspace: vc-echpj
+  project: lego-minifigures-r3zzt
+  version: 2
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/vc-echpj/lego-minifigures-r3zzt/dataset/2
